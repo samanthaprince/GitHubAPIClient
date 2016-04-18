@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub Api</title>
+  </head>
+  <body data-ng-app="app">
+    {{hello}}
+    <div data-ng-controller="ProfileController as profileCtrl" data-ng-init="profileCtrl.getProfile()">
+      <h1>{{profileCtrl.profile.name}}</h1>
+      <h2>Username: {{profileCtrl.profile.login}}</h2>
+      <img data-ng-src={{profileCtrl.profile.avatar_url}}>
+      <h2>Stats:</h2>
+      <h3>Following: {{profileCtrl.profile.following}}</h3>
+      <h3>Followers: {{profileCtrl.profile.followers}}</h3>
+    </div>
+    <div data-ng-controller="myReposController as myReposCtrl" data-ng-init="myReposCtrl.getRepos()">
+      <h4>See below for a list of repos:</h4>
+      <ul>
+        <li data-ng-repeat="repo in myReposCtrl.repos">
+          <h4><a ng-href="{{repo.url}}">{{repo.name}}</a></h4>
+
+        </li>
+      </ul>
+    </div>
+    <footer> By: Samantha Prince </footer>
+    <script src="./bundle.js"></script>
+    <!-- <script src="./node_modules/angular/angular.js"></script> -->
+  </body>
+</html>
