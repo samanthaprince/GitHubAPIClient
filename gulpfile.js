@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var eslint = require('gulp-eslint');
 var webpack = require('webpack-stream');
 
-var paths = ['*.js', '/js/app.js', '/js/myRepos/*.js', '/js/profile/*.js', 'test/*.js'];
+var paths = ['*.js', 'js/app.js', 'js/myRepos/*.js', 'js/profile/*.js', 'test/*.js'];
 
 const sources = {
   html: __dirname + '/build/index.html',
